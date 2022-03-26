@@ -35,11 +35,19 @@
     {
         throw new NotImplementedException();
     }
+
+    internal string getTitle()
+    {
+        throw new NotImplementedException();
+    }
 }
 
 public class SayaTubeUser
 {
-    private IEnumerable<SayaTubeVideo> uploadedVideos;
+    private int id;
+    internal string username;
+    List<SayaTubeVideo> uploadedVideos;
+    private object video;
 
     public int GetTotalVideoPlayCount()
     {
@@ -49,5 +57,21 @@ public class SayaTubeUser
             total += video.getPlayCount();
         }
         return total;
+    }
+
+    public void AddVideo(SayaTubeVideo video)
+    {
+        uploadedVideos.Add(video);
+        this.video = this.video;
+
+    }
+
+    public void PrintAllVideoPlaycount()
+    {
+        Console.WriteLine("User : " + this.video);
+        for (int i = 0; i < uploadedVideos.Count; i++)
+        {
+            Console.WriteLine("Video " + (i + 1) + " Judul : " + this.uploadedVideos[i].getTitle());
+        }
     }
 }
